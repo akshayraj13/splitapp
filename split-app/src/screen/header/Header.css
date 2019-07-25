@@ -1,0 +1,13 @@
+#fixedbutton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+#fixedtitle {
+    position: absolute;
+    top: 15px;
+    left: 380px;
+    margin-bottom: 10px;
+    color:azure;
+    text-align: center;
+}
