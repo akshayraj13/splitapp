@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import Header from "./screen/header/Header";
+import Home from "./screen/home/Home";
 
 class Square extends React.Component {
     render() {
@@ -64,7 +65,12 @@ class Game extends React.Component {
 class App extends React.Component {
     render(){
         return (
-            <Header />
+            <div>
+                <Header />
+                <Home />
+            </div>
+
+
         );
     }
 

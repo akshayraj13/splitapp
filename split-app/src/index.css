@@ -1,50 +1,261 @@
+* {
+    box-sizing : border-box;
+}
+
+body,
+html {
+    height     : 100%;
+    min-height : 100%;
+}
+
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+    margin           : 0;
+    background-color : #e7e7e7;
+    font-family      : 'Roboto',
+    sans-serif;
 }
 
-ol, ul {
-    padding-left: 30px;
+/* Credit Card */
+
+.credit-card {
+    width            : 360px;
+    height           : 400px;
+    margin           : 60px auto 0;
+    border           : 1px solid #ddd;
+    border-radius    : 6px;
+    background-color : #fff;
+    box-shadow       : 1px 2px 3px 0px rgba(0,0,0,0.10);
 }
 
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
+.form-header {
+    height        : 60px;
+    padding       : 20px 30px 0;
+    border-bottom : 1px solid #E1E8EE;
 }
 
-.status {
-    margin-bottom: 10px;
+.form-body {
+    height  : 340px;
+    padding : 30px 30px 20px;
 }
 
-.square {
-    background: #fff;
-    border: 1px solid #999;
+/* Title */
+
+.title {
+    margin    : 0;
+    color     : #5e6977;
+    font-size : 18px;
+}
+
+/* Common */
+
+.card-number,
+.cvv-input input,
+.month select,
+.paypal-btn,
+.proceed-btn,
+.year select {
+    height : 42px;
+}
+
+.card-number,
+.month select,
+.year select {
+    font-size   : 14px;
+    font-weight : 100;
+    line-height : 14px;
+}
+
+.card-number,
+.cvv-details,
+.cvv-input input,
+.month select,
+.year select {
+    color   : #86939e;
+    opacity : .7;
+}
+
+/* Card Number */
+
+.card-number {
+    width         : 100%;
+    margin-bottom : 20px;
+    padding-left  : 20px;
+    border        : 2px solid #e1e8ee;
+    border-radius : 6px;
+}
+
+/* Date Field */
+
+.month select,
+.year select {
+    -moz-appearance     : none;
+    -webkit-appearance  : none;
+    width               : 145px;
+    margin-bottom       : 20px;
+    padding-left        : 20px;
+    border              : 2px solid #e1e8ee;
+    border-radius       : 6px;
+    background-position : 85% 50%;
+}
+
+.month select {
+    float : left;
+}
+
+.year select {
+    float : right;
+}
+
+/* Card Verification Field */
+
+.cvv-input input {
+    width         : 145px;
+    float         : left;
+    padding-left  : 20px;
+    border        : 2px solid #e1e8ee;
+    border-radius : 6px;
+    background    : #fff;
+}
+
+.cvv-details {
+    float         : right;
+    margin-bottom : 20px;
+    font-size     : 12px;
+    font-weight   : 300;
+    line-height   : 16px;
+}
+
+.cvv-details p {
+    margin-top : 6px;
+}
+
+
+
+/* Buttons Section */
+
+.paypal-btn,
+.proceed-btn {
+    cursor: pointer;
+    width         : 100%;
+    border-color  : transparent;
+    border-radius : 6px;
+    font-size     : 16px;
+}
+
+.proceed-btn {
+    margin-bottom : 10px;
+    background    : #3479b7;
+}
+
+
+.proceed-btn a {
+    text-decoration : none;
+    cursor          : pointer;
+}
+
+.proceed-btn a {
+    color : #fff;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+:host {
+    height: 100%;
+}
+
+.photo {
+    object-fit: contain;
+}
+
+.card {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.left,
+.right {
+    top: 50%;
     float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
+    transform: translateY(0%);
 }
 
-.square:focus {
-    outline: none;
+.left {
+    background: #337ab7;
+    display: inline-block;
+    white-space: nowrap;
+    width: 50px;
+    transition: width .5s;
 }
 
-.kbd-navigation .square:focus {
-    background: #ddd;
+.right {
+    background: #fff;
+    width: 350px;
+    transition: width 1s;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
 }
 
-.game {
-    display: flex;
-    flex-direction: row;
+.left:hover {
+    width: 160px;
 }
 
-.game-info {
-    margin-left: 20px;
+.item:hover {
+    background-color: #222;
+}
+
+.left .fas {
+    margin: 15px;
+    width: 20px;
+    color: #fff;
+}
+
+i.fas {
+    font-size: 17px;
+    vertical-align: middle !important;
+}
+
+.item {
+    height: 70px;
+    overflow: hidden;
+    color: #fff;
+}
+
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;} */
+
+small {
+    display: block;
+    line-height: 1.428571429;
+    color: #999;
+}
+
+.container{
+    margin-left:200px;
+}
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+}
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+}
+
+.container{
+    margin-left:120px;
+}
+
+#login {
+    margin-top: 56px;
 }
