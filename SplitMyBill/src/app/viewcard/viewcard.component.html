@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row col-md-8 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Card Number</th>
+                    <th>Card Name</th>
+                    <th>Card Holder Name</th>
+                    <th class="text-center">Balance</th>
+                </tr>
+
+            </thead>
+            <tr *ngFor="let cards of card">
+                <td>{{cards.cardid}}</td>
+                <td>{{cards.cardnumber}}</td>
+                <td>{{cards.cardname}}</td>
+                <td>{{cards.cardholdername}}</td>
+                <td class="text-center">{{cards.accbal}}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>

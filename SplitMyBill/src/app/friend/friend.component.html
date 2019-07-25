@@ -1,0 +1,43 @@
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <div id="content" class="content content-full-width">
+
+            <!-- begin profile-content -->
+            <div class="profile-content">
+               <!-- begin tab-content -->
+               <div class="tab-content p-0">
+                  <!-- begin #profile-friends tab -->
+                  <div class="tab-pane fade in active show" id="profile-friends">
+                     <h4 class="m-t-0 m-b-20">Friend List</h4>
+                     <!-- begin row -->
+                     <div class="row row-space-2">
+                        <!-- begin col-6 -->
+                        <div *ngFor="let friend of user" class="col-md-6 m-b-2">
+                           <div *ngIf="user" class="p-10 bg-white">
+                              <div class="media media-xs overflow-visible">
+                                 <a class="media-left" href="javascript:;">
+                                    <img src="./assets/images/user-icon.jpg" alt="" class="media-object img-circle">
+                                 </a>
+                                 <div class="media-body valign-middle">
+                                    <b class="text-inverse">{{friend.user_fname}} {{friend.user_lname}}</b>
+                                 </div>
+                                 <div class="media-body valign-middle text-right overflow-visible">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- end col-6 -->
+
+                     </div>
+                     <!-- end row -->
+                  </div>
+                  <!-- end #profile-friends tab -->
+               </div>
+               <!-- end tab-content -->
+            </div>
+            <!-- end profile-content -->
+         </div>
+      </div>
+   </div>
+</div>

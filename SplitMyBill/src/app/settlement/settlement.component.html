@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row col-md-8 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+      <thead>
+
+        <tr>
+          <th>Settlement</th>
+          <th>Amout to pay/receive</th>
+          <th class="text-center">Action</th>
+        </tr>
+
+      </thead>
+
+      <tr *ngFor="let onesettlement of settlement">
+
+        <td *ngIf=(onesettlement.billtopay)>{{onesettlement.settlementmsg}}</td>
+        <td *ngIf=(onesettlement.billtopay)>{{onesettlement.billtopay}}</td>
+        <td class="text-center" *ngIf=(onesettlement.billtopay)&&(onesettlement.status)>
+          <button type="button" class="btn btn-primary"
+            (click)="openModal(template,onesettlement.friend_email,onesettlement.billtopay)">Pay</button></td>
+        <td class="text-center" *ngIf=(onesettlement.billtopay)&&(!onesettlement.status)>
+          <button type="button" class="btn btn-primary" (click)="onRemind(onesettlement.friend_email)">Remind</button>
+        </td>
+
+      </tr>
+
+    </table>
+  </div>
+</div>
+
+
+<ng-template #template>
+
+  <div class="modal-container" style="width: 0px;height: 0px;">
+    <div class="modal-content" style="width: 0px;height: 0px;">
+      <form [formGroup]="paymentForm" class="credit-card" (ngSubmit)="onSubmit(email,billtopay)">
+
+        <div class="form-header">
+          <h4 class="title">Payment Gateway</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="form-body">
+          Transfer Amt. : Rs. {{billtopay}}
+          <div class="month">
+
+
+            <select name="Select Card" formControlName="selectedCard">
+              <option selected disabled value=''>Select Card</option>
+              <option *ngFor="let onecard of card" [value]=onecard.cardnumber>{{onecard.cardname}}</option>
+            </select>
+
+          </div>
+
+
+          <!-- Card Verification Field -->
+          <div class="card-verification">
+            <div class="cvv-input">
+              <input type="password" maxlength="3" formControlName="cvv" placeholder="CVV">
+            </div>
+            <div class="cvv-details">
+              <p>3 digits usually found <br> on the signature strip</p>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <button type="submit" class="proceed-btn" [disabled]="paymentForm.invalid">Pay</button>
+
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</ng-template>

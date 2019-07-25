@@ -1,0 +1,18 @@
+<form [formGroup]="sendEmailForm" class="credit-card" (ngSubmit)="onSubmit()">
+  <div class="form-header">
+    <h4 class="title">Invite Friend By Email</h4>
+  </div>
+
+  <div class="form-body">
+    <input formControlName="receiver_user_email" type="email" class="card-number" placeholder="email address">
+    <div *ngIf="receiver_user_email.errors?.pattern">
+      Email is not valid.
+    </div>
+
+    <!-- Button -->
+    <button type="submit" class="proceed-btn" [disabled]="sendEmailForm.invalid">Send</button>
+    <p class="title" style="text-align: center"> {{msg}} </p>
+
+  </div>
+
+</form>

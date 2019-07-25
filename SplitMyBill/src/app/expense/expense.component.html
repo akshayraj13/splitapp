@@ -1,0 +1,21 @@
+<form [formGroup]="addExpenseForm" class="credit-card" (ngSubmit)="onSubmit()">
+
+  <div class="form-header">
+    <h4 class="title">Select Friends </h4>
+  </div>
+
+  <div class="form-body">
+    <mat-form-field>
+      <mat-select placeholder="Select Friends" ngDefaultControl formControlName="selectedFriends"
+        [formControl]="friends" multiple>
+
+        <mat-option *ngFor="let friend of user" [value]="friend.user_email">{{friend.user_fname}} {{friend.user_lname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <input formControlName="expense" ngDefaultControl type="number" class="card-number" placeholder="expense">
+    <button type="submit" class="proceed-btn" [disabled]="addExpenseForm.invalid">Add Expense</button>
+  </div>
+
+</form>

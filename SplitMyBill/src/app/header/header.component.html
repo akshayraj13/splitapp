@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="https://www.alacriti.com/"><img src="./assets/images/logo.png" width="45"
+                        height="45" title="Alacriti Logo" alt="Alacriti Logo"></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item active" *ngIf="isSessionExists()">
+                                <a class="nav-link" href="http://localhost:4200/home"><span>Home</span> </a>
+                        </li>
+
+                        <li class="nav-item" *ngIf="isSessionExists()">
+                                <h4 style="color:azure;" id="fixedtitle">Welcome {{name}} </h4>
+                        </li>
+
+                        <li class="nav-item">
+                                <h4 id="fixedtitle" *ngIf="!(isSessionExists())"
+                                        style="margin-bottom: 10px;  color:azure; text-align: center;">Welcome to Split
+                                        My Bill </h4>
+
+                        </li>
+                        <li id="fixedbutton">
+                                <div id="login-btn">
+                                        <button class="btn btn-outline-success my-2 my-sm-0"
+                                                (click)="signInOut()">{{btn}}</button>
+                                </div>
+                        </li>
+                </ul>
+        </div>
+</nav>

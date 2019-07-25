@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row col-md-8 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+      <thead>
+
+        <tr>
+          <th>Credit History</th>
+        </tr>
+
+      </thead>
+
+      <tr *ngFor="let getonecredittransaction of getcredittransaction">
+        <td>{{getonecredittransaction.user_email}} paid you Rs. {{getonecredittransaction.billtopay}} on
+          {{getonecredittransaction.dateoftransaction}}
+        </td>
+      </tr>
+
+
+    </table>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row col-md-8 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+      <thead>
+        <tr>
+          <th>Debit History</th>
+        </tr>
+      </thead>
+
+      <tr *ngFor="let getonedebittransaction of getdebittransaction">
+        <td>You paid {{getonedebittransaction.user_email}} Rs. {{ getonedebittransaction.billtopay}} on
+          {{ getonedebittransaction.dateoftransaction}} 
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    background-color: #adc6db;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+    .container{
+        margin-left:190px; 
+    }
+   
+   .credit-card {
+    width            : 360px;
+    height           : 300px;
+    margin           : 0px auto 0;
+    border           : 1px solid #ddd;
+    border-radius    : 6px;
+    background-color : #fff;
+    box-shadow       : 1px 2px 3px 0px rgba(0,0,0,0.10);
+  }
+  
+
+  .month select {
+    float : none;
+    width: 298px;
+  }
+
+  .modal-content{
+      width: 2px;
+      height: 2px;
+  }
