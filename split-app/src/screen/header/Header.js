@@ -3,6 +3,12 @@ import './Header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import logo from '../../assets/images/logo.png'
+import ApolloClient from "apollo-boost";
+import { Link } from 'react-router-dom'
+
+const client = new ApolloClient({
+    uri: 'http://localhost:8080/graphql',
+})
 
 class Header extends React.Component {
     render() {
@@ -39,7 +45,7 @@ class Header extends React.Component {
                         </li>
                         <li id="fixedbutton">
                             <div id="login-btn">
-                                <button className="btn btn-outline-success my-2 my-sm-0">Login</button>
+                                <Link to={'/login'}><button className="btn btn-outline-success my-2 my-sm-0">Login</button></Link>
                             </div>
                         </li>
                     </ul>

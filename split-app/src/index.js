@@ -4,6 +4,10 @@ import './index.css';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import Header from "./screen/header/Header";
 import Home from "./screen/home/Home";
+import Books from "./screen/home/Urlobject";
+import {ApolloProvider} from "react-apollo";
+import ApolloClient from "apollo-boost";
+import Login from "./screen/Login/Login";
 
 class Square extends React.Component {
     render() {
@@ -66,9 +70,10 @@ class App extends React.Component {
     render(){
         return (
             <div>
-                <Header />
-                <Home />
+                <Header/>,
+                <Home/>
             </div>
+
 
 
         );
@@ -86,17 +91,21 @@ class About extends React.Component {
     }
 
 }
+const client = new ApolloClient({
+    uri: 'http://localhost:8080/graphql',
+})
 // ========================================
 
 ReactDOM.render(
-    <Router>
-        <div>
+    <ApolloProvider client={client}>
+        <Router>
 
-        </div>
-        <main>
-            <Route path="/" component={App} />
-            <Route path="/about" component={About} />
-        </main>
-    </Router>,
+            <main>
+                <Route exact path="/" component={App} />
+                <Route path="/about" component={About} />
+                <Route path="/login" component={Login} />
+            </main>
+        </Router>
+    </ApolloProvider>,
     document.getElementById('root')
 );

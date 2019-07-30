@@ -13,4 +13,22 @@ schema {
 
 type Mutation {
   createLink(url: String!, description: String!): Link
+  signinUser(auth: AuthData): SigninPayload
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String
+    password: String
+}
+
+type SigninPayload {
+    token: String
+    user: User
+}
+
+input AuthData {
+    email: String!
+    password: String!
 }

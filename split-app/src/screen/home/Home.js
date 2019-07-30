@@ -5,9 +5,7 @@ import { ApolloProvider } from 'react-apollo'
 
 import Books from './Urlobject'
 
-const client = new ApolloClient({
-    uri: 'http://localhost:8080/',
-})
+
 
 class Home extends React.Component {
     render() {
@@ -35,16 +33,15 @@ class Home extends React.Component {
                             situation.
                         </p>
                     </div>
-                    <ApolloProvider client={client}>
-                        <nav className="navbar">
-                            <a className="navbar-brand" href="">
-                                GraphQL in React - Demo application
-                            </a>
-                        </nav>
-                        <div className="container">
-                            <Books />
-                        </div>
-                    </ApolloProvider>
+
+                </div>
+                <nav className="navbar">
+                    <a className="navbar-brand" href="">
+                        GraphQL in React - Demo application
+                    </a>
+                </nav>
+                <div className="container">
+                    <Books />
                 </div>
             </div>
         );
