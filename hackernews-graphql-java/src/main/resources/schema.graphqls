@@ -32,3 +32,13 @@ input AuthData {
     email: String!
     password: String!
 }
+
+input Card {
+	cardholdername: String!
+    cardnumber:String!
+    cardname: String!
+    month: String!
+    year: String!
+    cvv: String!
+    email: String!
+}
