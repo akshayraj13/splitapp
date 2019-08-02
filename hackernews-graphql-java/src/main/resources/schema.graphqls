@@ -14,6 +14,7 @@ schema {
 type Mutation {
   createLink(url: String!, description: String!): Link
   signinUser(auth: AuthData): SigninPayload
+  addCard(card: CardInput): SigninPayload
 }
 
 type User {
@@ -33,12 +34,16 @@ input AuthData {
     password: String!
 }
 
-input Card {
+type Card {
 	cardholdername: String!
-    cardnumber:String!
+    cardnumber: String!
     cardname: String!
     month: String!
     year: String!
     cvv: String!
+    email: String!
+}
+
+input CardInput {
     email: String!
 }
