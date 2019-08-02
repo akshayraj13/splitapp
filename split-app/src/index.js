@@ -8,6 +8,7 @@ import Books from "./screen/home/Urlobject";
 import {ApolloProvider} from "react-apollo";
 import ApolloClient from "apollo-boost";
 import Login from "./screen/Login/Login";
+import Card from "./screen/card/Card";
 
 class Square extends React.Component {
     render() {
@@ -70,7 +71,6 @@ class App extends React.Component {
     render(){
         return (
             <div>
-                <Header/>,
                 <Home/>
             </div>
 
@@ -99,11 +99,12 @@ const client = new ApolloClient({
 ReactDOM.render(
     <ApolloProvider client={client}>
         <Router>
-
+            <Header/>
             <main>
                 <Route exact path="/" component={App} />
                 <Route path="/about" component={About} />
                 <Route path="/login" component={Login} />
+                <Route path="/card" component={Card} />
             </main>
         </Router>
     </ApolloProvider>,

@@ -41,18 +41,15 @@ export default class Login extends Component {
 
     render() {
         return (
-            <Mutation mutation={LOGIN_MUTATION} variables={this.state}
-                      onCompleted={({ data }) => {
-                console.log('response', data)
-
-            }}>
+            <Mutation mutation={LOGIN_MUTATION} variables={{auth: this.state}}
+                      onCompleted={data =>{
+                          console.log(data);
+                      }}>
                 {(addTodo, { data }) => (
                     <div className="Login">
                         <Form onSubmit={e => {
-                            console.log(this.state)
                             e.preventDefault();
                             addTodo();
-
                         }}>
                             <FormGroup controlId="email" bsSize="large">
                                 <label>Email</label>

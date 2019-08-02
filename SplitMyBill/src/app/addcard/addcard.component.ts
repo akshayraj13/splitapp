@@ -32,7 +32,7 @@ export class AddcardComponent implements OnInit {
   
 
   ngOnInit() {
-      this.email = sessionStorage.getItem('email');
+      // this.email = sessionStorage.getItem('email');
   }
 
 

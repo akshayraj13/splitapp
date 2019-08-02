@@ -15,7 +15,7 @@ import { StepploginComponent } from './stepplogin/stepplogin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'addcard', component: AddcardComponent,canActivate:[AuthGaurdService]},
+  { path: 'addcard', component: AddcardComponent},
   { path: 'profile', component: ProfileComponent ,canActivate:[AuthGaurdService]},
   { path: 'getcard', component: ViewcardComponent ,canActivate:[AuthGaurdService]},
   { path: 'friend', component: FriendComponent,canActivate:[AuthGaurdService]},
